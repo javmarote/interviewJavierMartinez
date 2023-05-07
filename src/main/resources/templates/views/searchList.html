@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<head>
+</head>
+<body>
+
+<div layout:fragment="content" class="container">
+
+  <h1>Documents search list</h1>
+
+    <h3>Percentage represented by total:</h3>
+    </tr>
+    <p id="percentage" type="text" name="name" th:text="${percentage} + '%'"></p>
+
+      <table>
+        <tr>
+          <th>NAME</th>
+          <th>PAGES</th>
+        </tr>
+        <tr th:each="document : ${documents}">
+        <td th:text="${document.name}"></td>
+        <td th:text="${document.pages}"></td>
+        </tr>
+      </table>
+
+   </div>
+
+   </body>
+   </html>

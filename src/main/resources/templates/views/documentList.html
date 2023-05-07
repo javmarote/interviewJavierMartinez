@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<head>
+</head>
+<body>
+
+<div layout:fragment="content" class="container">
+
+  <h1>Documents list</h1>
+  <p>
+    <a href="../create.html" th:href="@{/create}">Create Document</a>
+  </p>
+
+    <form action="/search" method="post" th:action="@{/search}" th:object="${document}">
+        <label for="name">Text:</label>
+        <input id="name" type="text" name="name" required="required" field="*{name}">
+        <input type="submit" value="Search">
+    </form>
+
+      <table>
+        <tr>
+          <th>NAME</th>
+          <th>PAGES</th>
+        </tr>
+        <tr th:each="document : ${documents}">
+        <td th:text="${document.name}"></td>
+        <td th:text="${document.pages}"></td>
+        </tr>
+      </table>
+
+
+   </div>
+
+   </body>
+   </html>

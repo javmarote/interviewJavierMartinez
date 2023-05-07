@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<head>
+</head>
+<body>
+
+<form action="/save" method="post" th:action="@{/save}" th:object="${document}">
+	<label for="name">Name:</label>
+	<input id="name" type="text" name="name" required="required" field="*{name}">
+
+	<label for="pages">Pages:</label>
+	<input id="pages" type="number" name="pages" required="required" field="*{pages}">
+
+	<input type="submit" value="Save">
+</form>
+
+</body>
+</html>
